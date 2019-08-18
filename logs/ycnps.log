@@ -1,0 +1,34 @@
+[2019/08/18 21:08:19] [DEBG] (main.main:10) -------- Debug ---------
+[2019/08/18 21:08:19] [INFO] (main.main:11) -------- info -----------
+[2019/08/18 21:08:19] [WARN] (main.main:12) -------- warn -----------
+[2019/08/18 21:08:19] [EROR] (main.main:13) -------- warn -----------
+[2019/08/18 21:29:00] [INFO] (main.main:46) *configPath is null
+[2019/08/18 21:29:45] [INFO] (main.main:46) *configPath is null
+[2019/08/18 21:30:14] [INFO] (main.main:46) *configPath is null
+[2019/08/18 21:30:22] [INFO] (main.main:46) *configPath is null
+[2019/08/18 21:31:15] [INFO] (main.main:47) *configPath is null
+[2019/08/18 21:31:28] [INFO] (main.main:49) *configPath is yc.conf
+[2019/08/18 22:52:24] [INFO] (main.main:47) *configPath is null
+[2019/08/18 22:59:04] [INFO] (main.main:49) *configPath is null
+[2019/08/18 23:00:36] [INFO] (main.main:49) *configPath is null
+[2019/08/18 23:00:36] [INFO] (client.StartFromFile:91) conf file: npc.conf
+[2019/08/18 23:08:08] [INFO] (main.main:49) *configPath is null
+[2019/08/18 23:08:08] [INFO] (client.StartFromFile:91) conf file: npc.conf
+[2019/08/18 23:10:26] [INFO] (main.main:49) *configPath is null
+[2019/08/18 23:10:26] [INFO] (client.StartFromFile:92) conf file: npc.conf
+[2019/08/18 23:18:39] [INFO] (main.main:49) *configPath is null
+[2019/08/18 23:18:39] [INFO] (client.StartFromFile:92) conf file: npc.conf
+[2019/08/18 23:24:10] [INFO] (main.main:49) *configPath is null
+[2019/08/18 23:24:10] [INFO] (client.StartFromFile:92) conf file: npc.conf
+[2019/08/19 00:00:54] [INFO] (main.main:49) *configPath is null
+[2019/08/19 00:00:54] [INFO] (client.StartFromFile:92) conf file: npc.conf
+[2019/08/19 00:00:54] [INFO] (client.StartFromFile:99) Loading configuration file npc.conf successfully
+[2019/08/19 00:09:29] [INFO] (main.main:49) *configPath is null
+[2019/08/19 00:09:35] [INFO] (client.StartFromFile:94) conf file: npc.conf
+[2019/08/19 00:12:02] [INFO] (client.StartFromFile:101) Loading configuration file npc.conf successfully
+2019/08/19 00:12:45 [INFO] (main.main:49) *configPath is null
+2019/08/19 00:12:45 [INFO] (client.StartFromFile:92) conf file: npc.conf
+2019/08/19 00:12:45 [INFO] (client.StartFromFile:99) Loading configuration file npc.conf successfully
+2019/08/19 00:12:52 [INFO] (main.main:49) *configPath is null
+2019/08/19 00:12:52 [INFO] (client.StartFromFile:94) conf file: npc.conf
+2019/08/19 00:12:52 [INFO] (client.StartFromFile:101) Loading configuration file npc.conf successfully
