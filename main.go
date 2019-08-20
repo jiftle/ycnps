@@ -37,23 +37,13 @@ var (
 func main() {
 
 	defer logger.Close()
-	//	logger.Debug("-------- Debug ---------")
-	//	logger.Info("-------- info -----------")
-	//	logger.Warn("-------- warn -----------")
-	//	logger.Error("-------- warn -----------")
 
 	// 解析命令行参数
 	flag.Parse()
-	if *configPath == "" {
-		*configPath = "npc.conf"
-		logger.Info("*configPath is null")
-	} else {
-		logger.Info("*configPath is %s", *configPath)
-	}
+	*configPath = "conf/npc.conf"
 	client.StartFromFile(*configPath)
 }
 
 func init() {
-	logger.LoadConfiguration("log4go.xml")
-	//defer logger.Close()
+	logger.LoadConfiguration("conf/log4go.xml")
 }

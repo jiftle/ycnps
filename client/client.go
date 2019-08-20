@@ -1,12 +1,15 @@
 package client
 
 import (
-	"ycnps/config"
-
+	"crypto/md5"
+	"encoding/hex"
 	logger "github.com/ccpaging/log4go"
-
+	"ycnps/common"
+	"ycnps/config"
+	"ycnps/conn"
+	//	"ycnps/version"
 	//	"encoding/base64"
-	//	"encoding/binary"
+	// "encoding/binary"
 	//	"errors"
 	//	"fmt"
 	//	"github.com/cnlh/nps/lib/common"
@@ -21,7 +24,7 @@ import (
 	//	"log"
 	//	"math"
 	//	"math/rand"
-	//	"net"
+	"net"
 	//	"net/http"
 	//	"net/http/httputil"
 	//	"net/url"
@@ -29,7 +32,7 @@ import (
 	//	"path/filepath"
 	//	"strconv"
 	//	"strings"
-	//	"time"
+	"time"
 )
 
 // func GetTaskStatus(path string) {
@@ -90,33 +93,24 @@ import (
 
 //var errAdd = errors.New("The server returned an error, which port or host may have been occupied or not allowed to open.")
 
+// 从配置文件启动
 func StartFromFile(path string) {
-	logger.Info("conf file: %s", path)
-	// first := true
 	cnf, err := config.NewConfig(path)
 	if err != nil || cnf.CommonConfig == nil {
-		logger.Error("Config file %s loading error %s", path, err.Error())
+		logger.Error("配置文件[%s]加载失败,%s", path, err.Error())
 		os.Exit(0)
 	}
-	logger.Info("Loading configuration file %s successfully", path)
-	//
-	//re:
-	//	if first || cnf.CommonConfig.AutoReconnection {
-	//		if !first {
-	//			logs.Info("Reconnecting...")
-	//			time.Sleep(time.Second * 5)
-	//		}
-	//	} else {
-	//		return
-	//	}
-	//	first = false
-	//	c, err := NewConn(cnf.CommonConfig.Tp, cnf.CommonConfig.VKey, cnf.CommonConfig.Server, common.WORK_CONFIG, cnf.CommonConfig.ProxyUrl)
-	//	if err != nil {
-	//		logs.Error(err)
-	//		goto re
-	//	}
-	//	var isPub bool
-	//	binary.Read(c, binary.LittleEndian, &isPub)
+	logger.Info("加载配置文件[%s]成功", path)
+
+	// 新建连接 c
+	// c, err := NewConn(cnf.CommonConfig.Tp, cnf.CommonConfig.VKey, cnf.CommonConfig.Server, common.WORK_CONFIG, cnf.CommonConfig.ProxyUrl)
+	_, err = NewConn(cnf.CommonConfig.Tp, cnf.CommonConfig.VKey, cnf.CommonConfig.Server, common.WORK_CONFIG, cnf.CommonConfig.ProxyUrl)
+	if err != nil {
+		logger.Error(err)
+	}
+
+	//var isPub bool
+	//binary.Read(c, binary.LittleEndian, &isPub)
 	//
 	//	// get tmp password
 	//	var b []byte
@@ -182,4 +176,95 @@ func StartFromFile(path string) {
 	//	NewRPClient(cnf.CommonConfig.Server, vkey, cnf.CommonConfig.Tp, cnf.CommonConfig.ProxyUrl, cnf).Start()
 	//	CloseLocalServer()
 	//	goto re
+}
+
+// Create a new connection with the server and verify it
+// 创建一个新的连接
+func NewConn(tp string, vkey string, server string, connType string, proxyUrl string) (*conn.Conn, error) {
+	logger.Info("tp:%s,vkey:%s,server:%s,connType:%s,proxyUrl:%s", tp, vkey, server, connType, proxyUrl)
+	var err error
+	var connection net.Conn
+	//	var sess *kcp.UDPSession
+	if tp == "tcp" {
+		//		if proxyUrl != "" {
+		//			u, er := url.Parse(proxyUrl)
+		//			if er != nil {
+		//				return nil, er
+		//			}
+		//			switch u.Scheme {
+		//			case "socks5":
+		//				n, er := proxy.FromURL(u, nil)
+		//				if er != nil {
+		//					return nil, er
+		//				}
+		//				connection, err = n.Dial("tcp", server)
+		//			case "http":
+		//				connection, err = NewHttpProxyConn(u, server)
+		//			}
+		//		} else {
+		connection, err = net.Dial("tcp", server)
+		if err != nil {
+			logger.Error("创建tcp测试连接失败,%s", err)
+			return nil, err
+		}
+		logger.Info("创建tcp测试连接成功")
+		//		}
+	} else {
+		//		sess, err = kcp.DialWithOptions(server, nil, 10, 3)
+		//		if err == nil {
+		//			conn.SetUdpSession(sess)
+		//			connection = sess
+		//		}
+	}
+
+	// 设置超时时间 30秒
+	connection.SetDeadline(time.Now().Add(time.Second * 30))
+	defer connection.SetDeadline(time.Time{})
+
+	// 创建一个新连接
+	logger.Error("新建通讯连接")
+	c := conn.NewConn(connection)
+	if _, err := c.Write([]byte(common.CONN_TEST)); err != nil {
+		logger.Error("新建通讯连接失败,%v", err)
+		return nil, err
+	}
+
+	//	// 发送客户端的版本信息
+	//	if _, err := c.Write([]byte(Md5(version.GetVersion()))); err != nil {
+	//		logger.Error("发送客户端版本信息失败,%s", err)
+	//		return nil, err
+	//	}
+	// 取服务端返回的32个字节
+	//	if b, err := c.GetShortContent(32); err != nil || Md5(version.GetVersion()) != string(b) {
+	//		logs.Error("客户端和服务端版本不匹配，客户端当前版本是%s", version.GetVersion())
+	//		return nil, err
+	//	}
+	//	// 发送验证结果
+	//	if _, err := c.Write([]byte(common.Getverifyval(vkey))); err != nil {
+	//		return nil, err
+	//	}
+	//
+	//	// 读取标记
+	//	if s, err := c.ReadFlag(); err != nil {
+	//		return nil, err
+	//	} else if s == common.VERIFY_EER { //密钥验证错
+	//		logs.Error("Validation key %s incorrect", vkey)
+	//		os.Exit(0)
+	//	}
+	//	// 发送连接类型
+	//	if _, err := c.Write([]byte(connType)); err != nil {
+	//		return nil, err
+	//	}
+	//
+	//	//设置保活
+	//	c.SetAlive(tp)
+	//
+	return c, nil
+}
+
+//Generate 32-bit MD5 strings
+func Md5(s string) string {
+	h := md5.New()
+	h.Write([]byte(s))
+	return hex.EncodeToString(h.Sum(nil))
 }
