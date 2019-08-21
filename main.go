@@ -41,6 +41,8 @@ func main() {
 	// 解析命令行参数
 	flag.Parse()
 	*configPath = "conf/npc.conf"
+
+	// 从配置文件启动
 	client.StartFromFile(*configPath)
 }
 
