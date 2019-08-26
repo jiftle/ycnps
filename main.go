@@ -2,20 +2,9 @@ package main
 
 import (
 	"flag"
-	//"fmt"
-	logger "github.com/ccpaging/log4go"
 	"ycnps/client"
-	//"github.com/cnlh/nps/client"
-	//"github.com/cnlh/nps/lib/common"
-	//"github.com/cnlh/nps/lib/config"
-	//"github.com/cnlh/nps/lib/daemon"
-	//"github.com/cnlh/nps/lib/file"
-	//"github.com/cnlh/nps/lib/version"
-	//"github.com/cnlh/nps/vender/github.com/astaxie/beego/logs"
-	//"github.com/cnlh/nps/vender/github.com/ccding/go-stun/stun"
-	//	"os"
-	//	"strings"
-	//	"time"
+
+	logger "github.com/ccpaging/log4go"
 )
 
 var (
@@ -40,6 +29,8 @@ func main() {
 
 	// 解析命令行参数
 	flag.Parse()
+
+	// 指定默认的配置文件路径
 	*configPath = "conf/npc.conf"
 
 	// 从配置文件启动

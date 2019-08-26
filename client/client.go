@@ -1,22 +1,18 @@
 package client
 
 import (
-	logger "github.com/ccpaging/log4go"
 	"ycnps/common"
 	"ycnps/config"
 	"ycnps/conn"
 	"ycnps/crypt"
 	"ycnps/version"
+
+	logger "github.com/ccpaging/log4go"
+
 	//	"encoding/base64"
 	"encoding/binary"
 	//	"errors"
 	//	"fmt"
-	//	"github.com/cnlh/nps/lib/common"
-	//	"github.com/cnlh/nps/lib/config"
-	//	"github.com/cnlh/nps/lib/conn"
-	//	"github.com/cnlh/nps/lib/crypt"
-	//	"github.com/cnlh/nps/lib/version"
-	//	"github.com/cnlh/nps/vender/github.com/astaxie/beego/logs"
 	//	"github.com/cnlh/nps/vender/github.com/xtaci/kcp"
 	//	"github.com/cnlh/nps/vender/golang.org/x/net/proxy"
 	"io/ioutil"
@@ -29,6 +25,7 @@ import (
 	//	"net/url"
 	"os"
 	"path/filepath"
+
 	//	"strconv"
 	//	"strings"
 	"time"
@@ -107,7 +104,7 @@ func StartFromFile(path string) {
 		logger.Error(err)
 	}
 
-	var isPub bool
+	var isPub bool //公共的
 	binary.Read(c, binary.LittleEndian, &isPub)
 	logger.Info("服务端返回isPub=%v", isPub)
 
@@ -138,7 +135,7 @@ func StartFromFile(path string) {
 	logger.Info("vkey验证密钥写入到文件%s", sfilepath)
 	ioutil.WriteFile(sfilepath, []byte(vkey), 0600)
 
-	//	//send hosts to server
+	//	//send hosts to server 发送hosts文件给服务端
 	//	for _, v := range cnf.Hosts {
 	//		if _, err := c.SendInfo(v, common.NEW_HOST); err != nil {
 	//			logs.Error(err)
@@ -150,7 +147,7 @@ func StartFromFile(path string) {
 	//		}
 	//	}
 	//
-	//	//send  task to server
+	//	//send  task to server 发送任务给服务端
 	//	for _, v := range cnf.Tasks {
 	//		if _, err := c.SendInfo(v, common.NEW_TASK); err != nil {
 	//			logs.Error(err)
@@ -166,18 +163,24 @@ func StartFromFile(path string) {
 	//		}
 	//	}
 	//
-	//	//create local server secret or p2p
+	//	//create local server secret or p2p  创建本地服务，加密通信或p2p
 	//	for _, v := range cnf.LocalServer {
 	//		go StartLocalServer(v, cnf.CommonConfig)
 	//	}
 	//
-	//	c.Close()
+	c.Close()
 	//	if cnf.CommonConfig.Client.WebUserName == "" || cnf.CommonConfig.Client.WebPassword == "" {
 	//		logs.Notice("web access login username:user password:%s", vkey)
 	//	} else {
 	//		logs.Notice("web access login username:%s password:%s", cnf.CommonConfig.Client.WebUserName, cnf.CommonConfig.Client.WebPassword)
 	//	}
-	//	NewRPClient(cnf.CommonConfig.Server, vkey, cnf.CommonConfig.Tp, cnf.CommonConfig.ProxyUrl, cnf).Start()
+
+	// 新建RPC客户端
+	RpcClient := NewRPClient(cnf.CommonConfig.Server, vkey, cnf.CommonConfig.Tp, cnf.CommonConfig.ProxyUrl, cnf)
+	// 启动客户端
+	RpcClient.Start()
+
+	// 关闭本地服务，现在用不到
 	//	CloseLocalServer()
 	//	goto re
 }
@@ -211,7 +214,7 @@ func NewConn(tp string, vkey string, server string, connType string, proxyUrl st
 			logger.Error("创建tcp测试连接失败,%s", err)
 			return nil, err
 		}
-		logger.Info("创建tcp测试连接成功")
+		logger.Info("创建tcp测试连接成功,%s.", connection.LocalAddr().String())
 		//		}
 	} else {
 		//		sess, err = kcp.DialWithOptions(server, nil, 10, 3)
@@ -226,13 +229,14 @@ func NewConn(tp string, vkey string, server string, connType string, proxyUrl st
 	defer connection.SetDeadline(time.Time{})
 
 	// 创建一个新连接
-	logger.Error("新建通讯连接-start")
+	logger.Info("新建通讯连接-start")
 	c := conn.NewConn(connection)
 	if _, err := c.Write([]byte(common.CONN_TEST)); err != nil {
 		logger.Error("新建通讯连接失败,%v", err)
 		return nil, err
 	}
-	logger.Info("新建通讯连接-success")
+
+	logger.Info("新建通讯连接,本地端口:%s -success", c.Conn.LocalAddr().String())
 	// 发送客户端的版本信息
 	if _, err := c.Write([]byte(crypt.Md5(version.GetVersion()))); err != nil {
 		logger.Error("发送客户端版本信息失败,%s", err)

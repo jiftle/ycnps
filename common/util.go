@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/base64"
 	"encoding/binary"
-	logger "github.com/ccpaging/log4go"
+	//	logger "github.com/ccpaging/log4go"
 	"html/template"
 	"net"
 	"net/http"
@@ -305,7 +305,7 @@ func GetLocalUdpAddr() (net.Conn, error) {
 
 //parse template 分析模板
 func ParseStr(str string) (string, error) {
-	logger.Info("--> 分析模板,str=%s", str)
+	//	logger.Info("--> 分析模板,str=%s", str)
 	tmp := template.New("npc")
 	var err error
 	w := new(bytes.Buffer)
