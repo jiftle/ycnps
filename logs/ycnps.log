@@ -1,0 +1,547 @@
+[2019/08/26 12:58:35] [INFO] (common.ParseStr:308) --> 分析模板,str=[common]
+server_addr=127.0.0.1:8024
+conn_type=tcp
+vkey=c1
+auto_reconnection=false
+max_conn=1000
+flow_limit=1000
+rate_limit=1000
+basic_username=
+basic_password=
+web_username=
+web_password=
+crypt=false
+compress=false
+
+[health_check_test1]
+health_check_timeout=1
+health_check_max_failed=3
+health_check_interval=1
+health_http_url=/
+health_check_type=http
+health_check_target=127.0.0.1:8083,127.0.0.1:8082
+
+[health_check_test2]
+health_check_timeout=1
+health_check_max_failed=3
+health_check_interval=1
+health_check_type=tcp
+health_check_target=127.0.0.1:8083,127.0.0.1:8082
+
+[web]
+host=c.o.com
+target_addr=127.0.0.1:8083,127.0.0.1:8082
+
+[tcp]
+mode=tcp
+target_addr=127.0.0.1:8080
+server_port=10000
+
+[socks5]
+mode=socks5
+server_port=19009
+
+[file]
+mode=file
+server_port=19008
+local_path=/Users/liuhe/Downloads
+strip_pre=/web/
+
+[http]
+mode=httpProxy
+server_port=19004
+
+[udp]
+mode=udp
+server_port=12253
+target_addr=114.114.114.114:53
+
+[ssh_secret]
+mode=secret
+password=ssh2
+target_addr=123.206.77.88:22
+
+[ssh_p2p]
+mode=p2p
+password=ssh3
+
+[secret_ssh]
+local_port=2001
+password=ssh2
+
+[p2p_ssh]
+local_port=2002
+password=ssh3
+target_addr=123.206.77.88:22
+
+[2019/08/26 12:58:35] [INFO] (client.StartFromFile:102) 加载配置文件[conf/npc.conf]成功
+[2019/08/26 12:58:35] [INFO] (client.NewConn:188) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:conf,proxyUrl:
+[2019/08/26 12:58:35] [INFO] (client.NewConn:214) 创建tcp测试连接成功
+[2019/08/26 12:58:35] [EROR] (client.NewConn:229) 新建通讯连接-start
+[2019/08/26 12:58:35] [INFO] (client.NewConn:235) 新建通讯连接-success
+[2019/08/26 12:58:35] [INFO] (client.StartFromFile:112) 服务端返回isPub=false
+[2019/08/26 12:58:35] [INFO] (client.StartFromFile:138) vkey验证密钥写入到文件/tmp/npc_vkey.txt
+[2019/08/26 21:11:08] [INFO] (common.ParseStr:308) --> 分析模板,str=[common]
+server_addr=127.0.0.1:8024
+conn_type=tcp
+vkey=c1
+auto_reconnection=false
+max_conn=1000
+flow_limit=1000
+rate_limit=1000
+basic_username=
+basic_password=
+web_username=
+web_password=
+crypt=false
+compress=false
+
+[health_check_test1]
+health_check_timeout=1
+health_check_max_failed=3
+health_check_interval=1
+health_http_url=/
+health_check_type=http
+health_check_target=127.0.0.1:8083,127.0.0.1:8082
+
+[health_check_test2]
+health_check_timeout=1
+health_check_max_failed=3
+health_check_interval=1
+health_check_type=tcp
+health_check_target=127.0.0.1:8083,127.0.0.1:8082
+
+[web]
+host=c.o.com
+target_addr=127.0.0.1:8083,127.0.0.1:8082
+
+[tcp]
+mode=tcp
+target_addr=127.0.0.1:8080
+server_port=10000
+
+[socks5]
+mode=socks5
+server_port=19009
+
+[file]
+mode=file
+server_port=19008
+local_path=/Users/liuhe/Downloads
+strip_pre=/web/
+
+[http]
+mode=httpProxy
+server_port=19004
+
+[udp]
+mode=udp
+server_port=12253
+target_addr=114.114.114.114:53
+
+[ssh_secret]
+mode=secret
+password=ssh2
+target_addr=123.206.77.88:22
+
+[ssh_p2p]
+mode=p2p
+password=ssh3
+
+[secret_ssh]
+local_port=2001
+password=ssh2
+
+[p2p_ssh]
+local_port=2002
+password=ssh3
+target_addr=123.206.77.88:22
+
+[2019/08/26 21:11:08] [INFO] (client.StartFromFile:102) 加载配置文件[conf/npc.conf]成功
+[2019/08/26 21:11:08] [INFO] (client.NewConn:188) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:conf,proxyUrl:
+[2019/08/26 21:11:08] [INFO] (client.NewConn:214) 创建tcp测试连接成功
+[2019/08/26 21:11:08] [EROR] (client.NewConn:229) 新建通讯连接-start
+[2019/08/26 21:11:08] [INFO] (client.NewConn:235) 新建通讯连接-success
+[2019/08/26 21:11:08] [INFO] (client.StartFromFile:112) 服务端返回isPub=false
+[2019/08/26 21:11:08] [INFO] (client.StartFromFile:138) vkey验证密钥写入到文件/tmp/npc_vkey.txt
+[2019/08/26 21:11:45] [INFO] (common.ParseStr:308) --> 分析模板,str=[common]
+server_addr=127.0.0.1:8024
+conn_type=tcp
+vkey=c1
+auto_reconnection=false
+max_conn=1000
+flow_limit=1000
+rate_limit=1000
+basic_username=
+basic_password=
+web_username=
+web_password=
+crypt=false
+compress=false
+
+[health_check_test1]
+health_check_timeout=1
+health_check_max_failed=3
+health_check_interval=1
+health_http_url=/
+health_check_type=http
+health_check_target=127.0.0.1:8083,127.0.0.1:8082
+
+[health_check_test2]
+health_check_timeout=1
+health_check_max_failed=3
+health_check_interval=1
+health_check_type=tcp
+health_check_target=127.0.0.1:8083,127.0.0.1:8082
+
+[web]
+host=c.o.com
+target_addr=127.0.0.1:8083,127.0.0.1:8082
+
+[tcp]
+mode=tcp
+target_addr=127.0.0.1:8080
+server_port=10000
+
+[socks5]
+mode=socks5
+server_port=19009
+
+[file]
+mode=file
+server_port=19008
+local_path=/Users/liuhe/Downloads
+strip_pre=/web/
+
+[http]
+mode=httpProxy
+server_port=19004
+
+[udp]
+mode=udp
+server_port=12253
+target_addr=114.114.114.114:53
+
+[ssh_secret]
+mode=secret
+password=ssh2
+target_addr=123.206.77.88:22
+
+[ssh_p2p]
+mode=p2p
+password=ssh3
+
+[secret_ssh]
+local_port=2001
+password=ssh2
+
+[p2p_ssh]
+local_port=2002
+password=ssh3
+target_addr=123.206.77.88:22
+
+[2019/08/26 21:11:45] [INFO] (client.StartFromFile:102) 加载配置文件[conf/npc.conf]成功
+[2019/08/26 21:11:45] [INFO] (client.NewConn:188) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:conf,proxyUrl:
+[2019/08/26 21:11:45] [INFO] (client.NewConn:214) 创建tcp测试连接成功
+[2019/08/26 21:11:45] [INFO] (client.NewConn:229) 新建通讯连接-start
+[2019/08/26 21:11:45] [INFO] (client.NewConn:235) 新建通讯连接-success
+[2019/08/26 21:11:45] [INFO] (client.StartFromFile:112) 服务端返回isPub=false
+[2019/08/26 21:11:45] [INFO] (client.StartFromFile:138) vkey验证密钥写入到文件/tmp/npc_vkey.txt
+[2019/08/26 21:12:16] [INFO] (common.ParseStr:308) --> 分析模板,str=[common]
+server_addr=127.0.0.1:8024
+conn_type=tcp
+vkey=c1
+auto_reconnection=false
+max_conn=1000
+flow_limit=1000
+rate_limit=1000
+basic_username=
+basic_password=
+web_username=
+web_password=
+crypt=false
+compress=false
+
+[health_check_test1]
+health_check_timeout=1
+health_check_max_failed=3
+health_check_interval=1
+health_http_url=/
+health_check_type=http
+health_check_target=127.0.0.1:8083,127.0.0.1:8082
+
+[health_check_test2]
+health_check_timeout=1
+health_check_max_failed=3
+health_check_interval=1
+health_check_type=tcp
+health_check_target=127.0.0.1:8083,127.0.0.1:8082
+
+[web]
+host=c.o.com
+target_addr=127.0.0.1:8083,127.0.0.1:8082
+
+[tcp]
+mode=tcp
+target_addr=127.0.0.1:8080
+server_port=10000
+
+[socks5]
+mode=socks5
+server_port=19009
+
+[file]
+mode=file
+server_port=19008
+local_path=/Users/liuhe/Downloads
+strip_pre=/web/
+
+[http]
+mode=httpProxy
+server_port=19004
+
+[udp]
+mode=udp
+server_port=12253
+target_addr=114.114.114.114:53
+
+[ssh_secret]
+mode=secret
+password=ssh2
+target_addr=123.206.77.88:22
+
+[ssh_p2p]
+mode=p2p
+password=ssh3
+
+[secret_ssh]
+local_port=2001
+password=ssh2
+
+[p2p_ssh]
+local_port=2002
+password=ssh3
+target_addr=123.206.77.88:22
+
+[2019/08/26 21:12:16] [INFO] (client.StartFromFile:102) 加载配置文件[conf/npc.conf]成功
+[2019/08/26 21:12:16] [INFO] (client.NewConn:188) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:conf,proxyUrl:
+[2019/08/26 21:12:16] [INFO] (client.NewConn:214) 创建tcp测试连接成功
+[2019/08/26 21:12:16] [INFO] (client.NewConn:229) 新建通讯连接-start
+[2019/08/26 21:12:16] [INFO] (client.NewConn:235) 新建通讯连接-success
+[2019/08/26 21:12:16] [INFO] (client.StartFromFile:112) 服务端返回isPub=false
+[2019/08/26 21:12:16] [INFO] (client.StartFromFile:138) vkey验证密钥写入到文件/tmp/npc_vkey.txt
+[2019/08/26 21:13:41] [INFO] (client.StartFromFile:102) 加载配置文件[conf/npc.conf]成功
+[2019/08/26 21:13:41] [INFO] (client.NewConn:188) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:conf,proxyUrl:
+[2019/08/26 21:13:41] [INFO] (client.NewConn:214) 创建tcp测试连接成功
+[2019/08/26 21:13:41] [INFO] (client.NewConn:229) 新建通讯连接-start
+[2019/08/26 21:13:41] [INFO] (client.NewConn:235) 新建通讯连接-success
+[2019/08/26 21:13:41] [INFO] (client.StartFromFile:112) 服务端返回isPub=false
+[2019/08/26 21:13:41] [INFO] (client.StartFromFile:138) vkey验证密钥写入到文件/tmp/npc_vkey.txt
+[2019/08/26 21:22:54] [INFO] (client.StartFromFile:102) 加载配置文件[conf/npc.conf]成功
+[2019/08/26 21:22:54] [INFO] (client.NewConn:188) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:conf,proxyUrl:
+[2019/08/26 21:22:54] [INFO] (client.NewConn:214) 创建tcp测试连接成功
+[2019/08/26 21:22:54] [INFO] (client.NewConn:229) 新建通讯连接-start
+[2019/08/26 21:22:54] [INFO] (client.NewConn:235) 新建通讯连接-success
+[2019/08/26 21:22:54] [INFO] (client.StartFromFile:112) 服务端返回isPub=false
+[2019/08/26 21:22:54] [INFO] (client.StartFromFile:138) vkey验证密钥写入到文件/tmp/npc_vkey.txt
+[2019/08/26 22:21:37] [INFO] (client.StartFromFile:102) 加载配置文件[conf/npc.conf]成功
+[2019/08/26 22:21:37] [INFO] (client.NewConn:194) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:conf,proxyUrl:
+[2019/08/26 22:21:37] [INFO] (client.NewConn:220) 创建tcp测试连接成功
+[2019/08/26 22:21:37] [INFO] (client.NewConn:235) 新建通讯连接-start
+[2019/08/26 22:21:37] [INFO] (client.NewConn:241) 新建通讯连接-success
+[2019/08/26 22:21:37] [INFO] (client.StartFromFile:112) 服务端返回isPub=false
+[2019/08/26 22:21:37] [INFO] (client.StartFromFile:138) vkey验证密钥写入到文件/tmp/npc_vkey.txt
+[2019/08/26 22:21:37] [INFO] (client.NewConn:194) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:main,proxyUrl:
+[2019/08/26 22:21:37] [INFO] (client.NewConn:220) 创建tcp测试连接成功
+[2019/08/26 22:21:37] [INFO] (client.NewConn:235) 新建通讯连接-start
+[2019/08/26 22:21:37] [INFO] (client.NewConn:241) 新建通讯连接-success
+[2019/08/26 22:21:37] [INFO] (client.(*TRPClient).Start:55) 连接成功,server 127.0.0.1:8024
+[2019/08/26 22:26:28] [INFO] (client.StartFromFile:96) 加载配置文件[conf/npc.conf]成功
+[2019/08/26 22:26:29] [INFO] (client.NewConn:188) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:conf,proxyUrl:
+[2019/08/26 22:26:29] [INFO] (client.NewConn:214) 创建tcp测试连接成功
+[2019/08/26 22:26:29] [INFO] (client.NewConn:229) 新建通讯连接-start
+[2019/08/26 22:26:29] [INFO] (client.NewConn:235) 新建通讯连接-success
+[2019/08/26 22:31:42] [INFO] (client.StartFromFile:106) 服务端返回isPub=false
+[2019/08/26 22:31:42] [INFO] (client.StartFromFile:132) vkey验证密钥写入到文件/tmp/npc_vkey.txt
+[2019/08/26 22:31:42] [INFO] (client.NewConn:188) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:main,proxyUrl:
+[2019/08/26 22:31:42] [INFO] (client.NewConn:214) 创建tcp测试连接成功
+[2019/08/26 22:31:42] [INFO] (client.NewConn:229) 新建通讯连接-start
+[2019/08/26 22:31:42] [INFO] (client.NewConn:235) 新建通讯连接-success
+[2019/08/26 22:31:42] [INFO] (client.(*TRPClient).Start:55) 连接成功,server 127.0.0.1:8024
+[2019/08/26 22:32:07] [INFO] (client.StartFromFile:96) 加载配置文件[conf/npc.conf]成功
+[2019/08/26 22:32:07] [INFO] (client.NewConn:188) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:conf,proxyUrl:
+[2019/08/26 22:32:07] [INFO] (client.NewConn:214) 创建tcp测试连接成功
+[2019/08/26 22:32:07] [INFO] (client.NewConn:229) 新建通讯连接-start
+[2019/08/26 22:32:07] [INFO] (client.NewConn:235) 新建通讯连接-success
+[2019/08/26 22:45:07] [INFO] (client.StartFromFile:99) 加载配置文件[conf/npc.conf]成功
+[2019/08/26 22:45:07] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:conf,proxyUrl:
+[2019/08/26 22:45:07] [INFO] (client.NewConn:217) 创建tcp测试连接成功
+[2019/08/26 22:45:07] [INFO] (client.NewConn:232) 新建通讯连接-start
+[2019/08/26 22:45:07] [INFO] (client.NewConn:238) 新建通讯连接,本地端口:9999 -success
+[2019/08/26 22:52:26] [INFO] (client.StartFromFile:99) 加载配置文件[conf/npc.conf]成功
+[2019/08/26 22:52:26] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:conf,proxyUrl:
+[2019/08/26 22:52:26] [INFO] (client.NewConn:217) 创建tcp测试连接成功
+[2019/08/26 22:52:26] [INFO] (client.NewConn:232) 新建通讯连接-start
+[2019/08/26 22:52:29] [INFO] (client.NewConn:239) 新建通讯连接,本地端口:127.0.0.1:34844 -success
+[2019/08/26 22:52:29] [INFO] (client.StartFromFile:109) 服务端返回isPub=false
+[2019/08/26 22:52:29] [INFO] (client.StartFromFile:135) vkey验证密钥写入到文件/tmp/npc_vkey.txt
+[2019/08/26 22:52:29] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:main,proxyUrl:
+[2019/08/26 22:52:59] [INFO] (client.StartFromFile:99) 加载配置文件[conf/npc.conf]成功
+[2019/08/26 22:52:59] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:conf,proxyUrl:
+[2019/08/26 22:52:59] [INFO] (client.NewConn:217) 创建tcp测试连接成功
+[2019/08/26 22:52:59] [INFO] (client.NewConn:232) 新建通讯连接-start
+[2019/08/26 22:52:59] [INFO] (client.NewConn:239) 新建通讯连接,本地端口:127.0.0.1:34856 -success
+[2019/08/26 22:52:59] [INFO] (client.StartFromFile:109) 服务端返回isPub=false
+[2019/08/26 22:52:59] [INFO] (client.StartFromFile:135) vkey验证密钥写入到文件/tmp/npc_vkey.txt
+[2019/08/26 22:52:59] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:main,proxyUrl:
+[2019/08/26 22:52:59] [INFO] (client.NewConn:217) 创建tcp测试连接成功
+[2019/08/26 22:52:59] [INFO] (client.NewConn:232) 新建通讯连接-start
+[2019/08/26 22:52:59] [INFO] (client.NewConn:239) 新建通讯连接,本地端口:127.0.0.1:34858 -success
+[2019/08/26 22:52:59] [INFO] (client.(*TRPClient).Start:55) 连接成功,server 127.0.0.1:8024
+[2019/08/26 23:01:35] [INFO] (client.StartFromFile:99) 加载配置文件[conf/npc.conf]成功
+[2019/08/26 23:01:35] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:conf,proxyUrl:
+[2019/08/26 23:01:35] [INFO] (client.NewConn:217) 创建tcp测试连接成功,127.0.0.1:34874.
+[2019/08/26 23:01:35] [INFO] (client.NewConn:232) 新建通讯连接-start
+[2019/08/26 23:01:35] [INFO] (client.NewConn:239) 新建通讯连接,本地端口:127.0.0.1:34874 -success
+[2019/08/26 23:01:35] [INFO] (client.StartFromFile:109) 服务端返回isPub=false
+[2019/08/26 23:01:35] [INFO] (client.StartFromFile:135) vkey验证密钥写入到文件/tmp/npc_vkey.txt
+[2019/08/26 23:01:35] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:main,proxyUrl:
+[2019/08/26 23:01:35] [INFO] (client.NewConn:217) 创建tcp测试连接成功,127.0.0.1:34876.
+[2019/08/26 23:01:35] [INFO] (client.NewConn:232) 新建通讯连接-start
+[2019/08/26 23:01:35] [INFO] (client.NewConn:239) 新建通讯连接,本地端口:127.0.0.1:34876 -success
+[2019/08/26 23:01:35] [INFO] (client.(*TRPClient).Start:55) 连接成功,server 127.0.0.1:8024
+[2019/08/27 20:12:28] [INFO] (client.StartFromFile:99) 加载配置文件[conf/npc.conf]成功
+[2019/08/27 20:12:28] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:conf,proxyUrl:
+[2019/08/27 20:12:28] [INFO] (client.NewConn:217) 创建tcp测试连接成功,127.0.0.1:55330.
+[2019/08/27 20:12:28] [INFO] (client.NewConn:232) 新建通讯连接-start
+[2019/08/27 20:12:28] [INFO] (client.NewConn:239) 新建通讯连接,本地端口:127.0.0.1:55330 -success
+[2019/08/27 20:12:28] [INFO] (client.StartFromFile:109) 服务端返回isPub=false
+[2019/08/27 20:12:28] [INFO] (client.StartFromFile:135) vkey验证密钥写入到文件/tmp/npc_vkey.txt
+[2019/08/27 20:12:28] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:main,proxyUrl:
+[2019/08/27 20:12:28] [INFO] (client.NewConn:217) 创建tcp测试连接成功,127.0.0.1:55332.
+[2019/08/27 20:12:28] [INFO] (client.NewConn:232) 新建通讯连接-start
+[2019/08/27 20:12:28] [INFO] (client.NewConn:239) 新建通讯连接,本地端口:127.0.0.1:55332 -success
+[2019/08/27 20:12:28] [INFO] (client.(*TRPClient).Start:55) 连接成功,server 127.0.0.1:8024
+[2019/08/27 20:23:54] [INFO] (client.StartFromFile:99) 加载配置文件[conf/npc.conf]成功
+[2019/08/27 20:23:54] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:conf,proxyUrl:
+[2019/08/27 20:23:54] [INFO] (client.NewConn:217) 创建tcp测试连接成功,127.0.0.1:55584.
+[2019/08/27 20:23:54] [INFO] (client.NewConn:232) 新建通讯连接-start
+[2019/08/27 20:23:54] [INFO] (client.NewConn:239) 新建通讯连接,本地端口:127.0.0.1:55584 -success
+[2019/08/27 20:23:54] [INFO] (client.StartFromFile:109) 服务端返回isPub=false
+[2019/08/27 20:23:54] [INFO] (client.StartFromFile:135) vkey验证密钥写入到文件/tmp/npc_vkey.txt
+[2019/08/27 20:23:54] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:main,proxyUrl:
+[2019/08/27 20:23:54] [INFO] (client.NewConn:217) 创建tcp测试连接成功,127.0.0.1:55586.
+[2019/08/27 20:23:54] [INFO] (client.NewConn:232) 新建通讯连接-start
+[2019/08/27 20:23:54] [INFO] (client.NewConn:239) 新建通讯连接,本地端口:127.0.0.1:55586 -success
+[2019/08/27 20:23:54] [INFO] (client.(*TRPClient).Start:55) 连接成功,server 127.0.0.1:8024
+[2019/08/27 20:23:54] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:chan,proxyUrl:
+[2019/08/27 20:23:54] [INFO] (client.NewConn:217) 创建tcp测试连接成功,127.0.0.1:55588.
+[2019/08/27 20:23:54] [INFO] (client.NewConn:232) 新建通讯连接-start
+[2019/08/27 20:23:54] [INFO] (client.NewConn:239) 新建通讯连接,本地端口:127.0.0.1:55588 -success
+[2019/08/27 20:23:54] [INFO] (client.(*TRPClient).newChan:280) 新建Chan，&{0xc00012a1f0 []}
+[2019/08/27 22:21:25] [INFO] (client.StartFromFile:100) 加载配置文件[conf/npc.conf]成功
+[2019/08/27 22:21:25] [INFO] (client.NewConn:192) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:conf,proxyUrl:
+[2019/08/27 22:21:25] [INFO] (client.NewConn:218) 创建tcp测试连接成功,127.0.0.1:56140.
+[2019/08/27 22:21:25] [INFO] (client.NewConn:233) 新建通讯连接-start
+[2019/08/27 22:21:25] [INFO] (client.NewConn:240) 新建通讯连接,本地端口:127.0.0.1:56140 -success
+[2019/08/27 22:21:25] [INFO] (client.StartFromFile:110) 服务端返回isPub=false
+[2019/08/27 22:21:25] [INFO] (client.StartFromFile:136) vkey验证密钥写入到文件/tmp/npc_vkey.txt
+[2019/08/27 22:21:25] [INFO] (client.NewConn:192) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:main,proxyUrl:
+[2019/08/27 22:21:25] [INFO] (client.NewConn:218) 创建tcp测试连接成功,127.0.0.1:56142.
+[2019/08/27 22:21:25] [INFO] (client.NewConn:233) 新建通讯连接-start
+[2019/08/27 22:21:25] [INFO] (client.NewConn:240) 新建通讯连接,本地端口:127.0.0.1:56142 -success
+[2019/08/27 22:21:25] [INFO] (client.(*TRPClient).Start:55) 连接成功,server 127.0.0.1:8024
+[2019/08/27 22:21:25] [INFO] (client.NewConn:192) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:chan,proxyUrl:
+[2019/08/27 22:21:25] [INFO] (client.NewConn:218) 创建tcp测试连接成功,127.0.0.1:56144.
+[2019/08/27 22:21:25] [INFO] (client.NewConn:233) 新建通讯连接-start
+[2019/08/27 22:21:25] [INFO] (client.NewConn:240) 新建通讯连接,本地端口:127.0.0.1:56144 -success
+[2019/08/27 22:21:25] [INFO] (client.(*TRPClient).newChan:281) 新建Chan，&{0xc00011e1e8 []}
+[2019/08/27 22:39:19] [INFO] (client.StartFromFile:99) 加载配置文件[conf/npc.conf]成功
+[2019/08/27 22:39:19] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:conf,proxyUrl:
+[2019/08/27 22:39:19] [INFO] (client.NewConn:217) 创建tcp测试连接成功,127.0.0.1:56166.
+[2019/08/27 22:39:19] [INFO] (client.NewConn:232) 新建通讯连接-start
+[2019/08/27 22:39:19] [INFO] (client.NewConn:239) 新建通讯连接,本地端口:127.0.0.1:56166 -success
+[2019/08/27 22:39:19] [INFO] (client.StartFromFile:109) 服务端返回isPub=false
+[2019/08/27 22:39:19] [INFO] (client.StartFromFile:135) vkey验证密钥写入到文件/tmp/npc_vkey.txt
+[2019/08/27 22:39:19] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:main,proxyUrl:
+[2019/08/27 22:39:19] [INFO] (client.NewConn:217) 创建tcp测试连接成功,127.0.0.1:56168.
+[2019/08/27 22:39:19] [INFO] (client.NewConn:232) 新建通讯连接-start
+[2019/08/27 22:39:19] [INFO] (client.NewConn:239) 新建通讯连接,本地端口:127.0.0.1:56168 -success
+[2019/08/27 22:39:19] [INFO] (client.(*TRPClient).Start:56) 连接成功,server 127.0.0.1:8024
+[2019/08/27 22:39:19] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:chan,proxyUrl:
+[2019/08/27 22:39:19] [INFO] (client.NewConn:217) 创建tcp测试连接成功,127.0.0.1:56170.
+[2019/08/27 22:39:19] [INFO] (client.NewConn:232) 新建通讯连接-start
+[2019/08/27 22:39:19] [INFO] (client.NewConn:239) 新建通讯连接,本地端口:127.0.0.1:56170 -success
+[2019/08/27 22:39:19] [INFO] (client.(*TRPClient).newChan:131) 新建Chan，&{0xc0000101f8 []}
+[2019/08/27 22:45:54] [INFO] (client.StartFromFile:99) 加载配置文件[conf/npc.conf]成功
+[2019/08/27 22:45:54] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:conf,proxyUrl:
+[2019/08/27 22:45:54] [INFO] (client.NewConn:217) 创建tcp测试连接成功,127.0.0.1:56188.
+[2019/08/27 22:45:54] [INFO] (client.NewConn:232) 新建通讯连接-start
+[2019/08/27 22:45:54] [INFO] (client.NewConn:239) 新建通讯连接,本地端口:127.0.0.1:56188 -success
+[2019/08/27 22:45:54] [INFO] (client.StartFromFile:109) 服务端返回isPub=false
+[2019/08/27 22:45:54] [INFO] (client.StartFromFile:135) vkey验证密钥写入到文件/tmp/npc_vkey.txt
+[2019/08/27 22:45:54] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:main,proxyUrl:
+[2019/08/27 22:45:54] [INFO] (client.NewConn:217) 创建tcp测试连接成功,127.0.0.1:56190.
+[2019/08/27 22:45:54] [INFO] (client.NewConn:232) 新建通讯连接-start
+[2019/08/27 22:45:54] [INFO] (client.NewConn:239) 新建通讯连接,本地端口:127.0.0.1:56190 -success
+[2019/08/27 22:45:54] [INFO] (client.(*TRPClient).Start:56) 连接成功,server 127.0.0.1:8024
+[2019/08/27 22:45:54] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:chan,proxyUrl:
+[2019/08/27 22:45:54] [INFO] (client.NewConn:217) 创建tcp测试连接成功,127.0.0.1:56192.
+[2019/08/27 22:45:54] [INFO] (client.NewConn:232) 新建通讯连接-start
+[2019/08/27 22:45:54] [INFO] (client.NewConn:239) 新建通讯连接,本地端口:127.0.0.1:56192 -success
+[2019/08/27 22:45:54] [INFO] (client.(*TRPClient).newChan:131) 新建Chan，&{0xc00011e1f0 []}
+[2019/08/27 23:26:23] [INFO] (client.StartFromFile:99) 加载配置文件[conf/npc.conf]成功
+[2019/08/27 23:26:23] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:conf,proxyUrl:
+[2019/08/27 23:26:23] [EROR] (client.NewConn:214) 创建tcp测试连接失败,dial tcp 127.0.0.1:8024: connect: connection refused
+[2019/08/27 23:26:23] [EROR] (client.StartFromFile:104) 新建连接失败，%v dial tcp 127.0.0.1:8024: connect: connection refused
+[2019/08/27 23:27:06] [INFO] (client.StartFromFile:99) 加载配置文件[conf/npc.conf]成功
+[2019/08/27 23:27:06] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:conf,proxyUrl:
+[2019/08/27 23:27:06] [INFO] (client.NewConn:217) 创建tcp测试连接成功,127.0.0.1:56276.
+[2019/08/27 23:27:06] [INFO] (client.NewConn:232) 新建通讯连接-start
+[2019/08/27 23:27:06] [INFO] (client.NewConn:239) 新建通讯连接,本地端口:127.0.0.1:56276 -success
+[2019/08/27 23:27:06] [INFO] (client.StartFromFile:109) 服务端返回isPub=false
+[2019/08/27 23:27:06] [INFO] (client.StartFromFile:135) vkey验证密钥写入到文件/tmp/npc_vkey.txt
+[2019/08/27 23:27:06] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:main,proxyUrl:
+[2019/08/27 23:27:06] [INFO] (client.NewConn:217) 创建tcp测试连接成功,127.0.0.1:56278.
+[2019/08/27 23:27:06] [INFO] (client.NewConn:232) 新建通讯连接-start
+[2019/08/27 23:27:06] [INFO] (client.NewConn:239) 新建通讯连接,本地端口:127.0.0.1:56278 -success
+[2019/08/27 23:27:06] [INFO] (client.(*TRPClient).Start:56) 连接成功,server 127.0.0.1:8024
+[2019/08/27 23:27:06] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:chan,proxyUrl:
+[2019/08/27 23:27:06] [INFO] (client.NewConn:217) 创建tcp测试连接成功,127.0.0.1:56280.
+[2019/08/27 23:27:06] [INFO] (client.NewConn:232) 新建通讯连接-start
+[2019/08/27 23:27:06] [INFO] (client.NewConn:239) 新建通讯连接,本地端口:127.0.0.1:56280 -success
+[2019/08/27 23:27:06] [INFO] (client.(*TRPClient).newChan:131) 新建Chan，&{0xc00011c1f0 []}
+[2019/08/27 23:27:24] [INFO] (client.StartFromFile:99) 加载配置文件[conf/npc.conf]成功
+[2019/08/27 23:27:24] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:conf,proxyUrl:
+[2019/08/27 23:27:24] [INFO] (client.NewConn:217) 创建tcp测试连接成功,127.0.0.1:56282.
+[2019/08/27 23:27:24] [INFO] (client.NewConn:232) 新建通讯连接-start
+[2019/08/27 23:27:24] [INFO] (client.NewConn:239) 新建通讯连接,本地端口:127.0.0.1:56282 -success
+[2019/08/27 23:27:24] [INFO] (client.StartFromFile:109) 服务端返回isPub=false
+[2019/08/27 23:27:24] [INFO] (client.StartFromFile:135) vkey验证密钥写入到文件/tmp/npc_vkey.txt
+[2019/08/27 23:27:24] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:main,proxyUrl:
+[2019/08/27 23:27:24] [INFO] (client.NewConn:217) 创建tcp测试连接成功,127.0.0.1:56284.
+[2019/08/27 23:27:24] [INFO] (client.NewConn:232) 新建通讯连接-start
+[2019/08/27 23:27:24] [INFO] (client.NewConn:239) 新建通讯连接,本地端口:127.0.0.1:56284 -success
+[2019/08/27 23:27:24] [INFO] (client.(*TRPClient).Start:56) 连接成功,server 127.0.0.1:8024
+[2019/08/27 23:27:24] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:chan,proxyUrl:
+[2019/08/27 23:27:24] [INFO] (client.NewConn:217) 创建tcp测试连接成功,127.0.0.1:56286.
+[2019/08/27 23:27:24] [INFO] (client.NewConn:232) 新建通讯连接-start
+[2019/08/27 23:27:24] [INFO] (client.NewConn:239) 新建通讯连接,本地端口:127.0.0.1:56286 -success
+[2019/08/27 23:27:24] [INFO] (client.(*TRPClient).newChan:131) 新建Chan，&{0xc00011c1f0 []}
+[2019/08/27 23:27:25] [INFO] (client.StartFromFile:99) 加载配置文件[conf/npc.conf]成功
+[2019/08/27 23:27:25] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:conf,proxyUrl:
+[2019/08/27 23:27:25] [INFO] (client.NewConn:217) 创建tcp测试连接成功,127.0.0.1:56288.
+[2019/08/27 23:27:25] [INFO] (client.NewConn:232) 新建通讯连接-start
+[2019/08/27 23:27:25] [INFO] (client.NewConn:239) 新建通讯连接,本地端口:127.0.0.1:56288 -success
+[2019/08/27 23:27:25] [INFO] (client.StartFromFile:109) 服务端返回isPub=false
+[2019/08/27 23:27:25] [INFO] (client.StartFromFile:135) vkey验证密钥写入到文件/tmp/npc_vkey.txt
+[2019/08/27 23:27:25] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:main,proxyUrl:
+[2019/08/27 23:27:25] [INFO] (client.NewConn:217) 创建tcp测试连接成功,127.0.0.1:56290.
+[2019/08/27 23:27:25] [INFO] (client.NewConn:232) 新建通讯连接-start
+[2019/08/27 23:27:25] [INFO] (client.NewConn:239) 新建通讯连接,本地端口:127.0.0.1:56290 -success
+[2019/08/27 23:27:25] [INFO] (client.(*TRPClient).Start:56) 连接成功,server 127.0.0.1:8024
+[2019/08/27 23:27:25] [INFO] (client.NewConn:191) tp:tcp,vkey:c1,server:127.0.0.1:8024,connType:chan,proxyUrl:
+[2019/08/27 23:27:25] [INFO] (client.NewConn:217) 创建tcp测试连接成功,127.0.0.1:56292.
+[2019/08/27 23:27:25] [INFO] (client.NewConn:232) 新建通讯连接-start
+[2019/08/27 23:27:25] [INFO] (client.NewConn:239) 新建通讯连接,本地端口:127.0.0.1:56292 -success
+[2019/08/27 23:27:25] [INFO] (client.(*TRPClient).newChan:131) 新建Chan，&{0xc0001a8018 []}

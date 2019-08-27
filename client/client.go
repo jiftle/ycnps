@@ -101,7 +101,7 @@ func StartFromFile(path string) {
 	// 新建连接 c
 	c, err := NewConn(cnf.CommonConfig.Tp, cnf.CommonConfig.VKey, cnf.CommonConfig.Server, common.WORK_CONFIG, cnf.CommonConfig.ProxyUrl)
 	if err != nil {
-		logger.Error(err)
+		logger.Fatal("新建连接失败，%v", err)
 	}
 
 	var isPub bool //公共的

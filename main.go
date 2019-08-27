@@ -20,7 +20,7 @@ var (
 	password     = flag.String("password", "", "p2p password flag")
 	target       = flag.String("target", "", "p2p target")
 	localType    = flag.String("local_type", "p2p", "p2p target")
-	logPath      = flag.String("log_path", "npc.log", "npc log path")
+	logPath      = flag.String("log_path", "logs/npc.log", "npc log path")
 )
 
 func main() {
